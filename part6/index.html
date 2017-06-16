@@ -112,6 +112,80 @@
 Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
 </p>
 
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Curve Fit</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Least Squares</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(0,4,50)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = 3*xdata + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä suoran sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[-0.04193429  3.00553665]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
         </div>
       </div>
 
