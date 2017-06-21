@@ -116,7 +116,7 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Curve Fit</h1>
+      <h1 class="exercise__heading">Resistance</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -129,19 +129,17 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
   Tehtäväpohja on seuraavanlainen:
   </p>
 
-<pre class="sh_java code-highlight"><code>  def main():
-    #Generoidaan random dataa
-    xdata = np.linspace(0,4,50)
-    y = func(xdata, 2, 3, 1)
-    y_noise = 0.2 * np.random.normal(size=xdata.size)
-    ydata = y + y_noise
+<pre class="sh_java code-highlight"><code>  def func(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+
 </code></pre>
 
   <p>
-  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
   </p>
 
-<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
+<pre class="sample-output">R = 0.56
 </pre>
 
 
@@ -252,6 +250,44 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
   </p>
 
 <pre class="sample-output">[ 1.00423816  0.99764248]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Curve Fit</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
 </pre>
 
 
