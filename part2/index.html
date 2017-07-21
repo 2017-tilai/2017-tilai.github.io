@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tieteellinen Laskenta I 2017 | Osa 2</title>
+    <title>Tieteellinen Laskenta I 2017 | Viikko 2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -64,10 +64,6 @@
   <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
 </li>
 
-    <li class="nav-item ">
-  <a href="/part7/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part7.html')">Viikko 7</a>
-</li>
-
   </ul>
 
   <div class="float-xs-right navbar__buttons">
@@ -101,24 +97,22 @@
 
   <div class="exercise-list__content" id="exercise-list"></div>
 
-    <div class="exercise-list__quiznator">
-      <div class="quiznator-dashboard"></div>
-
-    </div>
 </div>
 
 
-          
-<h1 class="material-heading">
+          <h1 class="material-heading">
     Toisen viikon tehtävät
 
 </h1>
+<p>
+Tähän tekstiä Numpysta
+</p>
 
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Sum and Cosine</h1>
+      <h1 class="exercise__heading">Trigonometry</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -128,15 +122,113 @@
     <div class="exercise__body">
       
   <p>
-    Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
-    Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
-    Tulosta sen jälkeen summa c sekä Cos(c)
+    Käytä Numpy-modulia ja Tulosta &#928;:n arvo,  Sin(&#928;), Cos(&#928;) ja Tan(&#928;)<br>
+    sekä luku 1, Arcsin(1), Arccos(1) ja Arctan(1)
   </p>
 
-<pre class="sample-output">3
--0.9899924966
+<pre class="sample-output">3.141592653589793
+1.22464679915e-16
+-1.0
+-1.22464679915e-16
+1
+1.57079632679
+0.0
+0.785398163397
 </pre>
 
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Exponent and logarithms</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Käytä Numpy-modulia ja tulosta e:n arvo, ln(e), log<sub>10</sub>(e), log<sub>2</sub>(e)<br>
+    sekä luku 2, e<sup>2</sup> ja e<sup>4*2</sup>
+  </p>
+
+<pre class="sample-output">2.718281828459045
+1.0
+0.434294481903
+1.44269504089
+2
+7.38905609893
+2980.95798704
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Complex numbers</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Käytä Numpy-modulia ja määritä kompleksiluvut a = (0 + i)<sup>2</sup>, b = 1 + i, c = 2 + 3i ja tulosta ne.<br>
+    Tulosta sen jälkeen d = b + c, d:n realiosa, d:n imaginääriosa, d:n komponenttien välinen kulma ja d:n konjugaatti.
+  </p>
+
+<pre class="sample-output">(-1+0j)
+(1+1j)
+(2+3j)
+(3+4j)
+3.0
+4.0
+0.927295218002
+(3-4j)
+</pre>
+
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Miscellaneous functions</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Käytä Numpy-modulia ja määritä luvut x = 9 ja y = -9.<br>
+    Laske sen jälkeen luvusta x neliöjuuri, luvusta y itseisarvo, luvusta x kuutiojuuri ja luvusta y kuutiojuuri ja lopuksi tulosta ne. Vihje: numpy.sqrt ja numpy.cbrt jne...
+  </p>
+
+<pre class="sample-output">3.0
+9
+2.08008382305
+-2.08008382305
+</pre>
 
     </div>
   </div>
@@ -225,40 +317,6 @@ Give second integer 9001
   </div>
 </div>
 
-  <p>
-    Tähän väliin tekstiä modulo-operaattorista.
-  </p>
-
-<div class="exercise">
-  <div class="exercise__header">
-    <a data-toggle="collapse" class="exercise__toggle">
-      <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Odd or even?</h1>
-
-      <i class="fa fa-caret-down exercise__arrow"></i>
-    </a>
-  </div>
-
-  <div class="collapse">
-    <div class="exercise__body">
-      
-  <p>
-    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
-    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
-  </p>
-
-<pre class="sample-output">Give a number to check 333
-Number 333 is odd.
-</pre>
-
-<pre class="sample-output">Give a number to check 222
-Number 222 is even.
-</pre>
-
-
-    </div>
-  </div>
-</div>
 
         </div>
       </div>
@@ -362,7 +420,7 @@ Tämä materiaali on lisensoitu Creative Commons BY-NC-SA-lisenssillä
       window.SD_SHOW_SURVEY = ['part6', 'part7'].indexOf(window.location.pathname.replace(/\//g,'')) >= 0;
     </script>
 
-    <script src="/javascripts/scripts-d38c20f1.js"></script>
+    <script src="/javascripts/scripts-b10b5b74.js"></script>
 
     <script src="https://use.fontawesome.com/ed2f73836b.js"></script>
 

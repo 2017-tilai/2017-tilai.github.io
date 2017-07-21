@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tieteellinen Laskenta I 2017 | Viikko 5</title>
+    <title>Tieteellinen Laskenta I 2017 | Osa 5</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -64,10 +64,6 @@
   <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
 </li>
 
-    <li class="nav-item ">
-  <a href="/part7/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part7.html')">Viikko 7</a>
-</li>
-
   </ul>
 
   <div class="float-xs-right navbar__buttons">
@@ -109,14 +105,14 @@
 
 </h1>
 <p>
-Tähän tekstiä funktioista ja esimerkki tehospektristä.
+Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
 </p>
 
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">More functions</h1>
+      <h1 class="exercise__heading">Resistance</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -129,23 +125,17 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
   Tehtäväpohja on seuraavanlainen:
   </p>
 
-<pre class="sh_java code-highlight"><code>    def main():
-    t = np.arange(3) + 1             # Älä koske
-    ydot = np.arange(3) + 4             # Älä koske
-    f = 1.41                          # Älä koske
-    tau = aliohjelma1(t,f)            # Älä koske
-    z1,z2 = aliohjelma2(t,ydot,f,tau) # Älä koske
-    print(tau,z1,z2)                # Älä koske
+<pre class="sh_java code-highlight"><code>  def func(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
 
-    #Kirjoita aliohjelma1 ja aliohjelma2 tähän
 </code></pre>
 
   <p>
-  Tulet tarvitsemaan tämän tehtävän koodia myöhemmin tällä kurssila, pidä se siis tallessa! Sinun tehtäväsi on luoda funktio joka laskee datan periodisuuden. Funktio laskee taun arvon ja palauttaa. Taun arvo on "sovitus" datasta ja sen avulla dataan saadaan periodisuus. Saadaksesi arvot Z1 ja Z2 tarvitset taun arvoa. Z1 ja Z2 muodostavat tehospektrin. <br>
-  Aloita tehtävä tekemällä aliohjelma1(t,f) joka laskee taun arvon. Luo seuraavaksi aliohjelma2(t, ydot, f, tau) joka laskee Z1 ja Z2 arvot. Tulosta lopuksi saadut arvot:
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
   </p>
 
-<pre class="sample-output">0.0496453900709 1.14844141687 11.8561720281
+<pre class="sample-output">R = 0.56
 </pre>
 
 
@@ -153,15 +143,11 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
   </div>
 </div>
 
-<p>
-Tähän tekstiä Python float numeroista.
-</p>
-
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Format</h1>
+      <h1 class="exercise__heading">Least Squares</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -171,24 +157,21 @@ Tähän tekstiä Python float numeroista.
     <div class="exercise__body">
       
   <p>
-  Seuraavaksi todella yksinkertainen harjoitus Pythonin float numeroiden formatista.
   Tehtäväpohja on seuraavanlainen:
   </p>
 
 <pre class="sh_java code-highlight"><code>  def main():
-    a = 2/3
-    b = np.pi
-    c = 11.123123123123
+    #Generate random data
+    xdata = np.linspace(0,4,50)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = 3*xdata + y_noise
 </code></pre>
 
   <p>
-  Tehtävä on oikein kun tulostat:
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä suoran sovitus generoituun dataan. Suora tulee olla muotoa ax + b. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
   </p>
 
-<pre class="sample-output">0.67
-3.1416
-11.123
-0.67 3.1416 11.123
+<pre class="sample-output">[-0.04193429  3.00553665]
 </pre>
 
 
@@ -196,14 +179,11 @@ Tähän tekstiä Python float numeroista.
   </div>
 </div>
 
-<p>
-Tähän tekstiä datan lukemisesta.
-</p>
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Data handling</h1>
+      <h1 class="exercise__heading">Least Squares Nonlinear</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -213,12 +193,59 @@ Tähän tekstiä datan lukemisesta.
     <div class="exercise__body">
       
   <p>
-  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  Tehtäväpohja on seuraavanlainen:
   </p>
 
-<pre class="sample-output">  0.01  &  7.73  &  1.20  &  7.69  &  2.05  &  7.72  &  3.13  &  7.69  \\
-  4.16  &  7.69  &  5.03  &  7.70  &  5.14  &  7.71  &  5.17  &  7.73  \\
-  ...
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(-3,7,75)
+    y_noise = 0.5 * np.random.normal(size=xdata.size)
+    ydata = xdata**2 + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa ax^2 + b oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[-0.02469396  0.99438934]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Least Squares Sine and Cosine</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(0,2*np.pi,100)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = np.sin(xdata) + np.cos(xdata) + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa Asin(x) + Bcos(x) oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[ 1.00423816  0.99764248]
 </pre>
 
 
@@ -231,7 +258,7 @@ Tähän tekstiä datan lukemisesta.
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">More data</h1>
+      <h1 class="exercise__heading">Curve Fit</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -241,29 +268,23 @@ Tähän tekstiä datan lukemisesta.
     <div class="exercise__body">
       
   <p>
-  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto missä on 528 riviä ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa on 50 riviä. Ensimmäisesä sarakkeessa ovat 50 ensimmäistä ajanhetken arvoa t kahden desimaalin tarkkuudella. Toisessa sarakkeessa on taas seuraavat 50 arvoa jne. Viimeisessä 11. sarakkeessa on 28 arvoa, sillä data loppuu kesken. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  Tehtäväpohja on seuraavanlainen:
   </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+</code></pre>
 
   <p>
-  Kolme ensimmäistä riviä
-  </p>
-<pre class="sample-output">
-
-1.08 &  31.26 &  65.09 &  97.47 & 128.28 & 156.09 & 190.26 & 239.08 & 274.36 & 314.07 & 346.38 \\
-1.24 &  31.43 &  65.27 &  98.09 & 128.47 & 156.27 & 190.43 & 239.23 & 277.07 & 314.22 & 347.38 \\
-1.40 &  32.09 &  65.46 &  98.28 & 132.09 & 156.46 & 191.09 & 239.38 & 277.22 & 314.36 & 348.08 \\
-</pre>
-  <p>
-  Kolme viimeistä riviä
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
   </p>
 
-<pre class="sample-output">
-
-29.25 &  62.09 &  94.47 & 127.28 & 154.09 & 188.26 & 238.08 & 272.36 & 308.07 & 345.38 &  \\
-29.43 &  62.27 &  97.09 & 127.47 & 154.28 & 188.43 & 238.23 & 274.07 & 308.22 & 346.08 &  \\
-31.09 &  62.45 &  97.28 & 128.09 & 154.46 & 190.09 & 238.38 & 274.22 & 308.36 & 346.23 &  \\
+<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
 </pre>
-
 
 
     </div>
@@ -372,7 +393,7 @@ Tämä materiaali on lisensoitu Creative Commons BY-NC-SA-lisenssillä
       window.SD_SHOW_SURVEY = ['part6', 'part7'].indexOf(window.location.pathname.replace(/\//g,'')) >= 0;
     </script>
 
-    <script src="/javascripts/scripts-d38c20f1.js"></script>
+    <script src="/javascripts/scripts-b10b5b74.js"></script>
 
     <script src="https://use.fontawesome.com/ed2f73836b.js"></script>
 

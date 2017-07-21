@@ -64,10 +64,6 @@
   <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
 </li>
 
-    <li class="nav-item ">
-  <a href="/part7/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part7.html')">Viikko 7</a>
-</li>
-
   </ul>
 
   <div class="float-xs-right navbar__buttons">
@@ -108,15 +104,17 @@
     Kuudennen viikon tehtävät
 
 </h1>
-<p>
-Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
-</p>
+
+<h2 class="material-heading">
+    Viimeisen viikon tehtävät koostuvat loppuprojektin osista. Tehtävänäsi on tehdä tehospektri annetulle datalle ja luoda siitä plottaukset.
+
+</h2>
 
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Resistance</h1>
+      <h1 class="exercise__heading">Rayleigh</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -126,21 +124,10 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
     <div class="exercise__body">
       
   <p>
-  Tehtäväpohja on seuraavanlainen:
+  Tehtävänäsi on aloittaa loppuprojekti tekemällä ennestään tutulle datalle Rayleigh-testi. Tee testi ohjeiden mukaisesti:
+  <a href="http://www.helsinki.fi/~jetsu/tila/H8bmalli.pdf"target="_blank">Linkki prujuihin</a>
   </p>
 
-<pre class="sh_java code-highlight"><code>  def func(param, xdata, ydata):
-    return ydata - (param[0] + param[1]*xdata)
-  def main():
-
-</code></pre>
-
-  <p>
-  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
-  </p>
-
-<pre class="sample-output">R = 0.56
-</pre>
 
 
     </div>
@@ -151,7 +138,7 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Least Squares</h1>
+      <h1 class="exercise__heading">Tehospektri</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -161,22 +148,10 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
     <div class="exercise__body">
       
   <p>
-  Tehtäväpohja on seuraavanlainen:
+  Tehtävänäsi on tehdä tehospektri annetulle datalle.
+  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
   </p>
 
-<pre class="sh_java code-highlight"><code>  def main():
-    #Generate random data
-    xdata = np.linspace(0,4,50)
-    y_noise = 0.2 * np.random.normal(size=xdata.size)
-    ydata = 3*xdata + y_noise
-</code></pre>
-
-  <p>
-  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä suoran sovitus generoituun dataan. Suora tulee olla muotoa ax + b. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
-  </p>
-
-<pre class="sample-output">[-0.04193429  3.00553665]
-</pre>
 
 
     </div>
@@ -187,7 +162,7 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Least Squares Nonlinear</h1>
+      <h1 class="exercise__heading">Datan sovittaminen periodiin</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -197,98 +172,10 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
     <div class="exercise__body">
       
   <p>
-  Tehtäväpohja on seuraavanlainen:
+  Tehtävänäsi on sovittaa annettu data löytämällesi periodille.
+  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
   </p>
 
-<pre class="sh_java code-highlight"><code>  def main():
-    #Generate random data
-    xdata = np.linspace(-3,7,75)
-    y_noise = 0.5 * np.random.normal(size=xdata.size)
-    ydata = xdata**2 + y_noise
-</code></pre>
-
-  <p>
-  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa ax^2 + b oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
-  </p>
-
-<pre class="sample-output">[-0.02469396  0.99438934]
-</pre>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-<div class="exercise">
-  <div class="exercise__header">
-    <a data-toggle="collapse" class="exercise__toggle">
-      <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Least Squares Sine and Cosine</h1>
-
-      <i class="fa fa-caret-down exercise__arrow"></i>
-    </a>
-  </div>
-
-  <div class="collapse">
-    <div class="exercise__body">
-      
-  <p>
-  Tehtäväpohja on seuraavanlainen:
-  </p>
-
-<pre class="sh_java code-highlight"><code>  def main():
-    #Generate random data
-    xdata = np.linspace(0,2*np.pi,100)
-    y_noise = 0.2 * np.random.normal(size=xdata.size)
-    ydata = np.sin(xdata) + np.cos(xdata) + y_noise
-</code></pre>
-
-  <p>
-  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa Asin(x) + Bcos(x) oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
-  </p>
-
-<pre class="sample-output">[ 1.00423816  0.99764248]
-</pre>
-
-
-    </div>
-  </div>
-</div>
-
-
-<div class="exercise">
-  <div class="exercise__header">
-    <a data-toggle="collapse" class="exercise__toggle">
-      <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Curve Fit</h1>
-
-      <i class="fa fa-caret-down exercise__arrow"></i>
-    </a>
-  </div>
-
-  <div class="collapse">
-    <div class="exercise__body">
-      
-  <p>
-  Tehtäväpohja on seuraavanlainen:
-  </p>
-
-<pre class="sh_java code-highlight"><code>  def main():
-    #Generoidaan random dataa
-    xdata = np.linspace(0,4,50)
-    y = func(xdata, 2, 3, 1)
-    y_noise = 0.2 * np.random.normal(size=xdata.size)
-    ydata = y + y_noise
-</code></pre>
-
-  <p>
-  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
-  </p>
-
-<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
-</pre>
 
 
     </div>
@@ -397,7 +284,7 @@ Tämä materiaali on lisensoitu Creative Commons BY-NC-SA-lisenssillä
       window.SD_SHOW_SURVEY = ['part6', 'part7'].indexOf(window.location.pathname.replace(/\//g,'')) >= 0;
     </script>
 
-    <script src="/javascripts/scripts-d38c20f1.js"></script>
+    <script src="/javascripts/scripts-b10b5b74.js"></script>
 
     <script src="https://use.fontawesome.com/ed2f73836b.js"></script>
 
