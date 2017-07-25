@@ -249,10 +249,20 @@ Tarvitsemme NumPyä käytännössä heti kun haluamme ratkaista muuta kuin perus
   </div>
 </div>
 
-  <p>
+<p>
+Python sisältää itsessään syötteen käsittelyyn tarvittan input-funktion. Inputin käyttö tapahtuu seuraavasti:
+</p>
+<pre class="sh_java code-highlight"><code>  nimi = input("Kerro nimesi ")
+</code></pre>
 
-  </p>
-
+<p>
+Ylläoleva koodi tuottaa seuraavan:
+</p>
+<pre class="sample-output">Kerro nimesi
+</pre>
+<p>
+  Input on Pythonissa string muotoista eli sitä ei voi suoraan käyttää esimerkiksi muuttujan arvojen antamiseksi.
+</p>
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
@@ -296,9 +306,11 @@ So, you are already 55 years old, Mikko!
 </div>
 
   <p>
-    Tähän väliin tekstiä inputin muuntamisesta luvuksi.
+    Inputin muuntaminen numeroarvoksi on todella yksinkertaista. Tarvitset siihen vain eval-komentoa.
   </p>
 
+<pre class="sh_java code-highlight"><code>  arvo = eval(input("Anna luku "))
+</code></pre>
 
 
 <div class="exercise">
