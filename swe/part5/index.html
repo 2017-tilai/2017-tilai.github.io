@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tieteellinen Laskenta I 2017 | Osa 6</title>
+    <title>Tieteellinen Laskenta I 2017 | Osa 5</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,31 +37,31 @@
 
   <ul class="nav navbar-nav hidden-md-down">
     <li class="nav-item ">
-  <a href="/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
+  <a href="/swe/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
 </li>
 
     <li class="nav-item ">
-  <a href="/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
+  <a href="/swe/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
 </li>
 
     <li class="nav-item ">
-  <a href="/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
+  <a href="/swe/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
 </li>
 
     <li class="nav-item ">
-  <a href="/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
+  <a href="/swe/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
 </li>
 
     <li class="nav-item ">
-  <a href="/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
-</li>
-
-    <li class="nav-item ">
-  <a href="/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+  <a href="/swe/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
 </li>
 
     <li class="nav-item active">
-  <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
+  <a href="/swe/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/swe/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
 </li>
 
   </ul>
@@ -101,20 +101,46 @@
 
 
           <h1 class="material-heading">
-    Kuudennen viikon tehtävät
+    Viidennen viikon tehtävät
 
 </h1>
+<p>
+Varsinkin laboratoriotöissä haluamme usein sovittaa dataan suoran tai käyrän, sekä tietää sen yhtälön. Pythonin avulla tämä käy nopeasti hyödyntämällä pienimmän neliösumman menetelmää. Wikipedia kertoo asiasta näin: "Pienimmän neliösumman menetelmässä regressiokertoimien estimaattorit määrätään minimoimalla jäännös- eli virhetermien neliösumma. Saaduilla estimaateilla voidaan siten muodostaa estimoitu regressiosuora, eli malli kuvaamaan selitettävän muuttujan vaihtelua. "
+</p>
 
-<h2 class="material-heading">
-    Viimeisen viikon tehtävät koostuvat loppuprojektin osista. Tehtävänäsi on tehdä tehospektri annetulle datalle ja luoda siitä plottaukset.
+<p>
+Pythonin leastsq-funktiota joka käyttää PNS-menetelmää kutsutaan seuraavasti:
+</p>
 
-</h2>
+<pre class="sh_java code-highlight"><code>  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+</code></pre>
+
+<p>
+Leastsq vaatii siis residuals funktion (joka laskee virhetermit), alkuarvauksen sekä argumenteiksi dataa. Nyt saamme sovitetun funktion seuraavalla tavalla:
+</p>
+
+<pre class="sh_java code-highlight"><code>  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+    yfit = tu[0] #Saadut parametrit
+    fitFunc = yfit[0] + yfit[1]*xdata
+</code></pre>
+
+<p>
+fitFuncin voimme plotata hyödyntämällä pyplottia.
+</p>
 
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Rayleigh</h1>
+      <h1 class="exercise__heading">Resistance</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -124,10 +150,21 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on aloittaa loppuprojekti tekemällä ennestään tutulle datalle Rayleigh-testi. Tee testi ohjeiden mukaisesti:
-  <a href="http://www.helsinki.fi/~jetsu/tila/H8bmalli.pdf"target="_blank">Linkki prujuihin</a>
+  Tehtäväpohja on seuraavanlainen:
   </p>
 
+<pre class="sh_java code-highlight"><code>  def func(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">R = 0.56
+</pre>
 
 
     </div>
@@ -138,7 +175,7 @@
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Tehospektri</h1>
+      <h1 class="exercise__heading">Least Squares</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -148,10 +185,22 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on tehdä tehospektri annetulle datalle.
-  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
+  Tehtäväpohja on seuraavanlainen:
   </p>
 
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(0,4,50)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = 3*xdata + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä suoran sovitus generoituun dataan. Suora tulee olla muotoa ax + b. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[-0.04193429  3.00553665]
+</pre>
 
 
     </div>
@@ -162,7 +211,7 @@
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Datan sovittaminen periodiin</h1>
+      <h1 class="exercise__heading">Least Squares Nonlinear</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -172,10 +221,98 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on sovittaa annettu data löytämällesi periodille.
-  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
+  Tehtäväpohja on seuraavanlainen:
   </p>
 
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(-3,7,75)
+    y_noise = 0.5 * np.random.normal(size=xdata.size)
+    ydata = xdata**2 + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa ax^2 + b oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[-0.02469396  0.99438934]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Least Squares Sine and Cosine</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generate random data
+    xdata = np.linspace(0,2*np.pi,100)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = np.sin(xdata) + np.cos(xdata) + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa Asin(x) + Bcos(x) oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[ 1.00423816  0.99764248]
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Curve Fit</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+</code></pre>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+<pre class="sample-output">[ 1.7763289   3.02012127  1.06947269]
+</pre>
 
 
     </div>

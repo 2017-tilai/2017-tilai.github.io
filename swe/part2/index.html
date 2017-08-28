@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tieteellinen Laskenta I 2017 | Osa 6</title>
+    <title>Tieteellinen Laskenta I 2017 | Viikko 2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,31 +37,31 @@
 
   <ul class="nav navbar-nav hidden-md-down">
     <li class="nav-item ">
-  <a href="/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
+  <a href="/swe/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
 </li>
 
     <li class="nav-item ">
-  <a href="/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
-</li>
-
-    <li class="nav-item ">
-  <a href="/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
-</li>
-
-    <li class="nav-item ">
-  <a href="/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
-</li>
-
-    <li class="nav-item ">
-  <a href="/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
-</li>
-
-    <li class="nav-item ">
-  <a href="/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+  <a href="/swe/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
 </li>
 
     <li class="nav-item active">
-  <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
+  <a href="/swe/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/swe/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/swe/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/swe/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/swe/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
 </li>
 
   </ul>
@@ -101,20 +101,33 @@
 
 
           <h1 class="material-heading">
-    Kuudennen viikon tehtävät
+    Toisen viikon tehtävät
 
 </h1>
+<p>
+NumPy on Pythonin perustavanlaatuinen kirjasto tieteellistä laskentaa varten. Tärkeimpiä ominaisuuksia NumPyssä on mm.
+</p>
 
-<h2 class="material-heading">
-    Viimeisen viikon tehtävät koostuvat loppuprojektin osista. Tehtävänäsi on tehdä tehospektri annetulle datalle ja luoda siitä plottaukset.
-
-</h2>
+<ul>
+  <li>
+    Tehokas N-dimensioinen lista
+  </li>
+  <li>
+    C/C++ ja Fortran koodin integroimista helpottavia ominaisuuksia
+  </li>
+  <li>
+    Lineaarialgebra, Fourier-muunnokset ja random generointi työkaluja.
+  </li>
+</ul>
+<p>
+Tarvitsemme NumPyä käytännössä heti kun haluamme ratkaista muuta kuin peruslaskutoimituksia. Esimerkiksi trigonometriset funktiot, exponenttifunktio, kompleksiluvut jne. ovat NumPy kirjastossa.
+</p>
 
 <div class="exercise">
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Rayleigh</h1>
+      <h1 class="exercise__heading">Trigonometry</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -124,10 +137,52 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on aloittaa loppuprojekti tekemällä ennestään tutulle datalle Rayleigh-testi. Tee testi ohjeiden mukaisesti:
-  <a href="http://www.helsinki.fi/~jetsu/tila/H8bmalli.pdf"target="_blank">Linkki prujuihin</a>
+    Käytä Numpy-modulia ja Tulosta &#928;:n arvo,  Sin(&#928;), Cos(&#928;) ja Tan(&#928;)<br>
+    sekä luku 1, Arcsin(1), Arccos(1) ja Arctan(1)
   </p>
 
+<pre class="sample-output">3.141592653589793
+1.22464679915e-16
+-1.0
+-1.22464679915e-16
+1
+1.57079632679
+0.0
+0.785398163397
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Exponent and logarithms</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Käytä Numpy-modulia ja tulosta e:n arvo, ln(e), log<sub>10</sub>(e), log<sub>2</sub>(e)<br>
+    sekä luku 2, e<sup>2</sup> ja e<sup>4*2</sup>
+  </p>
+
+<pre class="sample-output">2.718281828459045
+1.0
+0.434294481903
+1.44269504089
+2
+7.38905609893
+2980.95798704
+</pre>
 
 
     </div>
@@ -138,7 +193,7 @@
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Tehospektri</h1>
+      <h1 class="exercise__heading">Complex numbers</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -148,11 +203,19 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on tehdä tehospektri annetulle datalle.
-  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
+    Käytä Numpy-modulia ja määritä kompleksiluvut a = (0 + i)<sup>2</sup>, b = 1 + i, c = 2 + 3i ja tulosta ne.<br>
+    Tulosta sen jälkeen d = b + c, d:n realiosa, d:n imaginääriosa, d:n komponenttien välinen kulma ja d:n konjugaatti.
   </p>
 
-
+<pre class="sample-output">(-1+0j)
+(1+1j)
+(2+3j)
+(3+4j)
+3.0
+4.0
+0.927295218002
+(3-4j)
+</pre>
 
     </div>
   </div>
@@ -162,7 +225,7 @@
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Datan sovittaminen periodiin</h1>
+      <h1 class="exercise__heading">Miscellaneous functions</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -172,15 +235,115 @@
     <div class="exercise__body">
       
   <p>
-  Tehtävänäsi on sovittaa annettu data löytämällesi periodille.
-  <a href="http://www.helsinki.fi/~jetsu/tila/Harjoitus10.pdf"target="_blank">Linkki prujuihin</a>
+    Käytä Numpy-modulia ja määritä luvut x = 9 ja y = -9.<br>
+    Laske sen jälkeen luvusta x neliöjuuri, luvusta y itseisarvo, luvusta x kuutiojuuri ja luvusta y kuutiojuuri ja lopuksi tulosta ne. Vihje: numpy.sqrt ja numpy.cbrt jne...
   </p>
 
+<pre class="sample-output">3.0
+9
+2.08008382305
+-2.08008382305
+</pre>
+
+    </div>
+  </div>
+</div>
+
+<p>
+Python sisältää itsessään syötteen käsittelyyn tarvittan input-funktion. Inputin käyttö tapahtuu seuraavasti:
+</p>
+<pre class="sh_java code-highlight"><code>  nimi = input("Kerro nimesi ")
+</code></pre>
+
+<p>
+Ylläoleva koodi tuottaa seuraavan:
+</p>
+<pre class="sample-output">Kerro nimesi
+</pre>
+<p>
+  Input on Pythonissa string muotoista eli sitä ei voi suoraan käyttää esimerkiksi muuttujan arvojen antamiseksi.
+</p>
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Greeter</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Tee ohjelma, joka kysyy käyttäjältä hänen nimeä ja ikää.<br>
+    Nimen kysymisen jälkeen ohjelma tulostaa tekstin
+  </p>
+
+<pre class="sample-output">What is your name? Mikko
+Nice to meet you Mikko!
+</pre>
+  <p>
+    Vastaustekstin jälkeen ohjelma kysyy ikää ja tulostaa kokonaisen tervehdyksen.
+  </p>
+
+<pre class="sample-output">Your age? 55
+So, you are already 55 years old, Mikko!
+</pre>
+  <p>
+    Kokonaisuutena ohjelman tulostus näyttää siis seuraavalta
+  </p>
+
+<pre class="sample-output">What is your name? Mikko
+Nice to meet you Mikko!
+Your age? 55
+So, you are already 55 years old, Mikko!
+</pre>
+
+    </div>
+  </div>
+</div>
+
+  <p>
+    Inputin muuntaminen numeroarvoksi on todella yksinkertaista. Tarvitset siihen vain eval-komentoa.
+  </p>
+
+<pre class="sh_java code-highlight"><code>  arvo = eval(input("Anna luku "))
+</code></pre>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Calculator</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä kaksi lukua. <br>
+    Laske sen jälkeen näiden kahden luvun summa, tulo ja osamäärä.<br>
+    Tulosta tulokset.
+  </p>
+
+<pre class="sample-output">Give first integer 300
+Give second integer 9001
+9301
+2700300
+0.03332963004110654
+</pre>
 
 
     </div>
   </div>
 </div>
+
 
         </div>
       </div>
