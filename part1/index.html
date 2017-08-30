@@ -235,7 +235,7 @@ Kirjoita osoitteeksi:
 </p>
 
 <p>
-Seuraavaksi clientti kysyy käyttäjänimeä ja salasanaa, jotka loit äsken.
+Seuraavaksi client kysyy käyttäjänimeä ja salasanaa, jotka loit äsken.
 </p>
 
 <pre class="sh_java code-highlight"><code>username: tmctest
@@ -243,7 +243,7 @@ password:
 </code></pre>
 
 <p>
-Lopulta kometoriville tulee ilmoitus
+Lopulta komentoriville tulee ilmoitus
 </p>
 
 <pre class="sh_java code-highlight"><code>Login successful.
@@ -279,7 +279,7 @@ __init__.py  main.py  __pycache__
 </code></pre>
 
 <p>
-Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa lokaalit testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
+Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
 </p>
 
 <pre class="sh_java code-highlight"><code>~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ cd ..
@@ -293,7 +293,7 @@ OK
 </code></pre>
 
 <p>
-Kun lokaalit testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen läpi ja sinulle merkitään tehtävästä suoritus. HUOM muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. lokaalin testin ajaminen ei riitä suoritukseen!
+Kun paikalliset testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen ja sinulle merkitään tehtävästä suoritus. HUOM! Muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. paikallisen testin ajaminen ei riitä suoritukseen!
 </p>
 <pre class="sh_java code-highlight"><code>~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ tmc submit
 Submitting: viikko1-01_hello
@@ -315,7 +315,7 @@ Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien t
 </code></pre>
 
 <p>
-Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento ilmoittaa vain "All exercises are up-to-date".
+Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento tuottaa vain ilmoituksen "All exercises are up-to-date".
 </p>
 
 <h1 class="material-heading">
@@ -378,7 +378,7 @@ Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mik
 </div>
 
 <p>
-For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi edellinen tehtävä on paljon lyhyempi tehdä for-loopilla kuin kirjoittaa kaikki print-komennot itse.
+For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi tehtävä 2 on tehtävissä lyhyemmin for-loopilla kuin kirjoittamalla kaikki print-komennot itse.
 </p>
 
 <p>
@@ -387,7 +387,7 @@ For-loopin rakenne on luennolta tuttu:
 	        Body of for
 </code></pre>
 
-Missä val on arvo ja sequence on läpi käytävä kohde.
+Ylläolevassa val on arvo ja sequence on läpi käytävä kohde.
 </p>
 
 <p>
@@ -428,7 +428,7 @@ Esimerkiksi seuraava koodi tulostaa numerot 0-4
 </div>
 
 <p>
-Pythonissa muuttujat esitetään yhtäsuuruusmerkin vasemmalla puolella ja oikealla puolella sille asetettava arvo. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät myöskään saa alkaa numerolla.
+Pythonissa muuttujat esitellään yhtäsuuruusmerkin vasemmalla puolella, ja niiden arvo asetetaan merkin oikealla puolella. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät saa alkaa numerolla.
 </p>
 
 <p>
@@ -489,7 +489,7 @@ Luennolla käytiin läpi peruslaskutoimitukset.
   <div class="exercise__header">
     <a data-toggle="collapse" class="exercise__toggle">
       <i class="fa fa-pencil exercise__icon"></i>
-      <h1 class="exercise__heading">Sum and Cosine</h1>
+      <h1 class="exercise__heading">Sum and cosine</h1>
 
       <i class="fa fa-caret-down exercise__arrow"></i>
     </a>
@@ -501,7 +501,7 @@ Luennolla käytiin läpi peruslaskutoimitukset.
   <p>
     Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
     Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
-    Tulosta sen jälkeen summa c sekä Cos(c)
+    Tulosta sen jälkeen c:n sekä cos(c):n arvot.
   </p>
 
 <pre class="sample-output">3
