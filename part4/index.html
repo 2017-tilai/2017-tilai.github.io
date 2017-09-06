@@ -247,6 +247,21 @@ Ylläoleva koodi siis avaa input.dat tiedoston ja lukee siitä kaksi saraketta m
 </p>
 
 <p>
+NumPy sisältää myös kätevän tiedoston luku ominaisuuden.
+</p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+     file = open('input.dat', 'r')
+
+     x = np.loadtxt(file, usecols=(0,))
+     y = np.loadtxt(file, usecols=(1,))
+</code></pre>
+
+<p>
+Ylläolevalla komennolla käyttäjän ei tarvitse käydä dataa uudelleen for-loopilla läpi vaan se saadaan suoraan muuttujille.
+</p>
+
+<p>
 Vastaavasti tiedostoon kirjoittaminen toimii lähes samallatavalla.
 </p>
 
